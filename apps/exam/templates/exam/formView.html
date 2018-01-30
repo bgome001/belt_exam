@@ -8,8 +8,10 @@
     <title>Poke</title>
   </head>
   <body>
-    <h1>Welcome,{{username}}!</h1>
+    <h1>Welcome,{{session['username']}}!</h1>
     <p> People you may want to poke</p>
+  <form action="/create" method="post">
+     {% csrf_token %}
     <table>
       <tr>
         <th>Name</th>
@@ -21,14 +23,15 @@
       {% for user in create %}
       <p>
       <tr>
-        <td> {{ user.name }}</td>
-        <td> {{ user.alias }}</td>
-        <td> {{ user.email }}</td>
-        <td> {{ user.poke }}</td>
-        <td> {{ user.action}}</td>
+        <td>name is {{context.name }}</td>
+        <td>alis is {{context.alias }}</td>
+        <td>email is {{context.email }}</td>
+        <td>poke is {{context.poke }}</td>
+        <td>action is {{context.action}}</td>
       </tr>
       {% endfor %}
-  </table>
-  <input type="Action" value="Poke">
-  </body>
+   </table>
+    <input type="Action" value="Poke">
+ </form>
+</body>
 </html>

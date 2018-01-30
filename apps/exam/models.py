@@ -12,7 +12,7 @@ class UserManager(models.Manager):
            errors.append('password must be the same as confirm password')
         return errors
     def create_user(self, clean_data):
-        hashed = bcrypt.hashpassword(clean_data["password"].encode(). bcrypt.gensalt())
+        hashed = bcrypt.hashpw(clean_data["password"].encode(), bcrypt.gensalt())
         return self.create(
              password=hashed
         )

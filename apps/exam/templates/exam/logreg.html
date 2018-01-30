@@ -19,13 +19,13 @@
        <legend>Register</legend>
        <form action='/registration' method="POST">
            {% csrf_token %}
-            <input tpye="text" name="name">
-            <input tpye="text" name="alias">
-            <input tpye="text" name="email">
-            <input tpye="text" name="password">
-            <input tpye="text" name="confirm_password">
+            <ul><input tpye="text" name="name" placeholder="name"></ul>
+            <ul><input tpye="text" name="alias" placeholder="alias"></ul>
+            <ul><input tpye="text" name="email" placeholder="email"></ul>
+            <ul><input tpye="text" name="password" placeholder="password"></ul>
+            <ul><input tpye="text" name="confirm password"placeholder="confirm password"></ul>
            <div class="form-group">
-              <label class="col-sm-5 control-label">{{ profileform.dob.label }}:</label>
+              <label class="col-sm-5 control-label">{{ profileform.dob.label }}</label>
               <div class="col-sm-7">
                 {{ profileform.dob }}
              <div class="text-danger">
@@ -36,12 +36,12 @@
            <input type="submit" value="Register">
        </form>
      </fieldset>
-     <fieldset>
+      <fieldset>
             <legend>Login</legend>
             <form action='/login' method="POST">
                 {% csrf_token %}
-                <input tpye="text" name="email">
-                <input tpye="text" name="password">
+                <ul><input tpye="text" name="email" placeholder="email"></ul>
+                <ul><input tpye="text" name="password" placeholder="password"></ul>
                 <input type="submit" value="Login">
             </form>
      </fieldset>
